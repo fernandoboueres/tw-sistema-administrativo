@@ -121,7 +121,7 @@
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="observacao">Observacao</label>
+    <label class="col-form-label col-sm-2" for="observacao">Observação</label>
     <div class="col-sm-10">
         <input value="{{ old('observacao', @$empresa->observacao) }}" type="text" id="observacao" name="observacao" maxlength="500" class="form-control @error('observacao') is-invalid @enderror">
         @error('observacao')
