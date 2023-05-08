@@ -114,7 +114,12 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2" for="estado">Estado*</label>
     <div class="col-sm-10">
-        <input value="{{old('estado', @$empresa->estado)}}" type="text" name="estado" id="ciestadodade" required="required" maxlength="100" class="form-control @error('record') is-invalid @enderror">
+        <select name="estado" id="estado" class="form-control @error('estado') is-invalid @enderror" required="required">
+            <option value="">Selecione</option>
+            @foreach (estados() as $sigla => $nome)
+                <option {{ @$empresa->estado == $sigla ? 'selected' : '' }} value="{{ $sigla }}">{{ $nome }}</option>
+            @endforeach
+        </select>
         @error('estado')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
